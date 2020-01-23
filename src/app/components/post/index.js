@@ -20,14 +20,17 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Post(props) {
 	const classes = useStyles();
-	const { id, title, content, updated_at, username } = props;
+	const { id, title, content, updated_at, username, user_id } = props;
 	let initial = ((username || '').charAt(0) || '').toUpperCase();
-	const [ expanded, setExpanded ] = React.useState(false);
+	const handleUser = () => {
+		window.location.href = '/profile/' + user_id;
+	};
 
 	return (
 		<Grid item xs={12} sm={6} md={4}>
 			<Card className={classes.card}>
 				<CardHeader
+					onClick={handleUser}
 					avatar={
 						<Avatar aria-label="recipe" className={classes.avatar}>
 							{initial}

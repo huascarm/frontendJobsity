@@ -34,6 +34,7 @@ export const LoginUser = (credentials, history) => {
 			(res) => {
 				if (res.success) {
 					localStorage.setItem('userToken', 'Bearer ' + res.token);
+					localStorage.setItem('userId', res.id);
 					dispatch({ type: 'SUCCESS_LOGIN' });
 					setTimeout(() => {
 						history.push('/');

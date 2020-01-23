@@ -19,7 +19,7 @@ function App() {
 					<Route exact path="/" component={Landing} />
 					<Route path="/login" component={Login} />
 					<Route path="/register" component={Register} />
-					<CanRoute path="/profile" component={Profile} />
+					<CanRoute path="/profile/:id" component={Profile} />
 					<CanRoute path="/addNewEntry" component={AddEntry} />
 					<Route path="/entry/:id" component={Entry} />
 				</Switch>

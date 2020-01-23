@@ -49,7 +49,8 @@ export default function ProfileOptions(props) {
 	const [ anchorEl, setAnchorEl ] = React.useState(null);
 
 	function goToProfile() {
-		window.location.href = '/profile';
+		const $id = localStorage.getItem('userId');
+		window.location.href = '/profile/' + $id;
 	}
 
 	const handleClick = (event) => {
